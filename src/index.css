@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+
+:root {
+  --bg: #eef1f8;
+  --card: #ffffff;
+  --item: #f5f7fc;
+  --text: #1f2540;
+  --muted: #8a90aa;
+  --border: #e2e6f2;
+  --primary: #6c63ff;
+  --primary-hover: #574ee6;
+  --danger: #ff5c6c;
+  --success: #22c55e;
+}
+
+body.dark {
+  --bg: #12141f;
+  --card: #1c1f2e;
+  --item: #252939;
+  --text: #eef0fa;
+  --muted: #8b90a8;
+  --border: #2f3448;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Cairo", system-ui, sans-serif;
+  transition: background 0.3s, color 0.3s;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.app {
+  direction: rtl;
+  max-width: 460px;
+  margin: 40px auto;
+  padding: 26px;
+  background: var(--card);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(30, 30, 80, 0.15);
+  transition: background 0.3s;
+}
+
+/* الرأس */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.sub {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.theme-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--item);
+  font-size: 20px;
+}
+
+.theme-btn:hover {
+  transform: rotate(15deg);
+}
+
+/* شريط التقدم */
+.progress {
+  height: 8px;
+  margin: 18px 0;
+  background: var(--item);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #a78bfa);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+/* الإدخال */
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+input {
+  flex: 1;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--item);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+input:focus {
+  border-color: var(--primary);
+  background: var(--card);
+}
+
+.add-btn {
+  width: 50px;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(108, 99, 255, 0.4);
+}
+
+.add-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* الفلاتر */
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.chip {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--item);
+  border-radius: 99px;
+}
+
+.chip:hover {
+  color: var(--text);
+}
+
+.chip.active {
+  color: #fff;
+  background: var(--primary);
+}
+
+/* القائمة */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: var(--item);
+  border-radius: 14px;
+  animation: slideIn 0.3s ease;
+  transition: 0.2s;
+}
+
+li:hover {
+  transform: translateX(-3px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+li.done span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.check {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  font-size: 15px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+}
+
+.check:hover {
+  border-color: var(--success);
+}
+
+.check.checked {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.del-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 14px;
+  color: var(--danger);
+  background: transparent;
+  border-radius: 8px;
+  opacity: 0.6;
+}
+
+.del-btn:hover {
+  opacity: 1;
+  background: rgba(255, 92, 108, 0.15);
+}
+
+/* فارغ */
+.empty {
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty span {
+  font-size: 40px;
+}
+
+.empty p {
+  margin: 6px 0 0;
+}
+
+/* مسح المنجزة */
+.clear-btn {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--danger);
+  background: rgba(255, 92, 108, 0.1);
+  border-radius: 12px;
+}
+
+.clear-btn:hover {
+  background: rgba(255, 92, 108, 0.2);
+}

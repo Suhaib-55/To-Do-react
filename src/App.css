@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: system-ui, sans-serif;
+  display: block;
+}
+
+.app {
+  direction: rtl;
+  max-width: 420px;
+  margin: 50px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+.counter {
+  text-align: center;
+  color: #888;
+  margin: 6px 0 18px;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #667eea;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.add-btn {
+  background: #667eea;
+}
+
+.add-btn:hover {
+  background: #5568d3;
+}
+
+.del-btn {
+  background: #ef4444;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.del-btn:hover {
+  background: #dc2626;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f5f6fa;
+  border-radius: 8px;
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+  color: #333;
+}
+
+li.done span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.empty {
+  text-align: center;
+  color: #aaa;
+}
